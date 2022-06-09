@@ -1,24 +1,17 @@
-# README
+# Instructions
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+A final project in scripting language course at KIU
 
-Things you may want to cover:
+In order to successfully run this rails application you must do the following
 
-* Ruby version
+* clone it
 
-* System dependencies
+* install all the used libraries via "bundle install"
 
-* Configuration
+* migrate the databases with "rails db:migrate"
 
-* Database creation
+* start the server with "rails s"
 
-* Database initialization
+* if this doesn't work, then the fault is someplace else
 
-* How to run the test suite
 
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
