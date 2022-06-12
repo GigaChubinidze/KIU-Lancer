@@ -1,0 +1,39 @@
+<% content_for :header do %>
+<section class="hero is-warning">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Browse the latest services on KIU Lancer
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
+
+<div class="service-index-grid pt4">
+  <% @services.each do |service| %>
+
+    <div class="service border-light">
+      <div class="service-thumb">
+
+      <% if service.condition? %>
+        <div class="condition">
+          <span class="tag is-dark"><%= service.condition %></span>
+        </div>
+      <% end %>
+      </div>
+
+
+    <div class="pa3">
+
+      <h3 class="fw7 f4 title"><%= link_to service.title, service %></h3>
+       <%= image_tag(service.image_url, style:"width:200px; height:auto;") if service.image%>
+
+      <p class="has-text-gray fg pt1">Offered by <%= service.user.name %></p>
+
+      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(service.price) %></p>
+      
+    </div>
+  </div>
+  <% end %>
+</div>

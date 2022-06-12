@@ -1,0 +1,32 @@
+<div id="<%= dom_id service %>">
+  <p>
+    <strong>Title:</strong>
+    <%= service.title %>
+  </p>
+  
+  <p>
+    <strong>Description:</strong>
+    <%= service.description %>
+  </p>
+
+  <p>
+    <strong>Category:</strong>
+    <%= service.category %>
+  </p>
+
+  <p>
+    <strong>Condition:</strong>
+    <%= service.condition %>
+  </p>
+
+  <p>
+    <strong>Price:</strong>
+    <%= service.price %>
+  </p>
+
+    <p>
+    <strong>Image:</strong>
+    <%= image_tag(service.image_url, style:"width:200px; height:auto;") if service.image%>
+    </p>
+
+</div>

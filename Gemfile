@@ -7,7 +7,8 @@ gem "devise"
 gem "gravatar_image_tag"
 gem "carrierwave"
 gem "mini_magick"
-
+gem "shrine"
+gem "image_processing"
 
 ruby "3.1.2"
 
@@ -28,10 +29,10 @@ gem "importmap-rails"
 
 # Hotwire's SPA-like page accelerator [https://turbo.hotwired.dev]
 gem "turbo-rails"
-
+gem "turbolinks"
 # Hotwire's modest JavaScript framework [https://stimulus.hotwired.dev]
 gem "stimulus-rails"
-
+gem "coffee-rails"
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 gem "jbuilder"
 

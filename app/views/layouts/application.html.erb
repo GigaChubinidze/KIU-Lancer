@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>KIU-Service</title>
+    <title>KIU Lancer</title>
     <%= csrf_meta_tags %>
 
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <% javascript_include_tag  %>
+    <%= javascript_include_tag  %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -24,7 +24,7 @@
      <nav class="navbar" role="navigation" aria-label="main navigation" style="background: rgb(123, 144, 245);">
       <div class="navbar-brand">
         <%= link_to root_path, class:"navbar-item" do %>
-          <h1 class="title is-5">KIU-Service</h1>
+          <h1 class="title is-5">KIU Lancer</h1>
         <% end  %>
     </div>
 
