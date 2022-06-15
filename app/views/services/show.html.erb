@@ -1,10 +1,51 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :body_class, 'bg-light' %>
 
-<%= render @service %>
+<section class="section service-show">
+  <div class="columns">
+    <div class="column is-8">
+      <h1 class="title is-2"><%= @service.title %></h1>
 
-<div>
-  <%= link_to "Edit this service", edit_service_path(@service) %> |
-  <%= link_to "Back to services", services_path %>
 
-  <%= button_to "Destroy this service", @service, method: :delete %>
-</div>
+      <div class="feature-image">
+        <%= image_tag(@service.image_url) if @service.image %>
+      </div>
+
+      <div class="content pa4 mt3 bg-white border-radius-3">
+
+      <h3 class="subtitle is-4">Description</h3>
+      <%= @service.description %>
+
+
+      <h3 class="subtitle is-4 pt5">Further Details</h3>
+
+      <table class="table is-narrow">
+        <% if @service.condition %>
+        <tr>
+          <td class="has-text-weight-bold">Condition:</td>
+          <td><%= @service.condition %></td>
+        </tr>
+        <% end %>
+        <% if @service.category %>
+          <tr>
+            <td class="has-text-weight-bold">Category:</td>
+            <td><%= @service.category %></td>
+          </tr>
+        <% end %>
+        
+      </table>
+    </div>
+    </div>
+    <div class="column is-3 is-offset-1">
+      <div class="bg-white pa4 border-radius-3">
+        <h4 class="title is-5 has-text-centered"><%= number_to_currency(@service.price) %></h4>
+        <p class="has-text-centered mb4">Offered by <%= @service.user.name %></p>
+        <%= button_to 'Add to cart', "#", class: 'button is-warning add-to-cart' %>
+      </div>
+    </div>
+  </div>
+
+  <% if service_author(@service) %>
+    <%= link_to 'Edit', edit_service_path(@service), class: 'button' %>
+  <% end %>
+</section>
+

@@ -27,11 +27,11 @@ $link-hover: rgb(113, 125, 213);
     margin-bottom: 0;
   }
   
-  .instrument-index-grid {
+  .service-index-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
   
-    .instrument {
+    .service {
       border-left: 0;
       border-top: 0;
       position: relative;
@@ -47,7 +47,7 @@ $link-hover: rgb(113, 125, 213);
       }
     }
   
-    .instrument-thumb {
+    .service-thumb {
       position: relative;
       max-height: 150px;
       overflow: hidden;

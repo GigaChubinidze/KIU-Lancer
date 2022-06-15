@@ -15,25 +15,22 @@
 
     <div class="service border-light">
       <div class="service-thumb">
-
-      <% if service.condition? %>
-        <div class="condition">
-          <span class="tag is-dark"><%= service.condition %></span>
-        </div>
-      <% end %>
+        <% if service.condition? %>
+          <div class="condition"><span class="tag is-dark"><%= service.condition %></span></div>
+        <% end %>
       </div>
 
+      <div class="pa3">
+        <h3 class="fw7 f4 title"><%= link_to service.title, service %></h3>
+        <%= link_to image_tag(service.image_url, style:"width:200px; height:auto;"), service if service.image %>
+        <p class="has-text-gray fg pt1">Offered by <%= service.user.name %></p>
+        <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(service.price) %></p>
 
-    <div class="pa3">
-
-      <h3 class="fw7 f4 title"><%= link_to service.title, service %></h3>
-       <%= image_tag(service.image_url, style:"width:200px; height:auto;") if service.image%>
-
-      <p class="has-text-gray fg pt1">Offered by <%= service.user.name %></p>
-
-      <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(service.price) %></p>
-      
+        <% if service_author(service) %>
+          <%= link_to "Edit", edit_service_path(service), class: "button is-small" %>
+          <%= link_to "Delete", service, method: :delete, data: { confirm: "Are you sure?" }, class: "button is-small" %>
+        <% end %>
+      </div>
     </div>
-  </div>
   <% end %>
 </div>
