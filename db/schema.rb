@@ -10,7 +10,22 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_06_12_154720) do
+ActiveRecord::Schema[7.0].define(version: 2022_06_15_185922) do
+  create_table "carts", force: :cascade do |t|
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "line_items", force: :cascade do |t|
+    t.integer "service_id", null: false
+    t.integer "cart_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "quantity", default: 1
+    t.index ["cart_id"], name: "index_line_items_on_cart_id"
+    t.index ["service_id"], name: "index_line_items_on_service_id"
+  end
+
   create_table "services", force: :cascade do |t|
     t.string "category"
     t.text "description"
@@ -36,4 +51,6 @@ ActiveRecord::Schema[7.0].define(version: 2022_06_12_154720) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "line_items", "carts"
+  add_foreign_key "line_items", "services"
 end
