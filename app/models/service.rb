@@ -10,7 +10,7 @@ class Service < ApplicationRecord
 
     private 
         def not_referenced_by_any_line_item
-            unless line_item.empty?
+            unless line_items.empty?
                 errors.add(:base, "Line items present")
                 throw :abort
             end

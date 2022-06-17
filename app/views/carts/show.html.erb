@@ -1,10 +1,32 @@
-<p style="color: green"><%= notice %></p>
+<% content_for :header do %>
+<section class="ServiceHeader" style="background: rgb(9, 115, 223);">
+  <div class="hero-body">
+    <div class="container">
+      <h1 class="title">
+        Your Cart
+      </h1>
+    </div>
+  </div>
+</section>
+<% end %>
 
-<%= render @cart %>
-
-<div>
-  <%= link_to "Edit this cart", edit_cart_path(@cart) %> |
-  <%= link_to "Back to carts", carts_path %>
-
-  <%= button_to "Destroy this cart", @cart, method: :delete %>
+<div class="keep-shopping pv1 mt4 has-text-right">
+  <%= link_to "Keep Shopping", services_path, class: "button is-warning" %>
 </div>
+<hr/>
+<section class="section">
+  <%= render(@cart.line_items) %>
+  
+  <div class="columns">
+    <div class="column">
+      <%= button_to "Destroy Cart", @cart, method: :delete, data: { confirm: "Are you sure?"}, class: "button is-danger" %>
+    </div>
+
+    <div class="column total has-text-right">
+      <h4 class="title is-4">
+        <span class="f5 has-text-gray">Total:</span>
+        <%= number_to_currency(@cart.total_price) %>
+      </h4>
+    </div>
+  </div>
+</section>

@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag  %>
+    <%= javascript_include_tag 'application' %>
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -32,6 +32,17 @@
         <div class="navbar-end">
           <div class="navbar-item">
             <div class="field is-grouped">
+              <% if cart_has_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning", style:"background: rgb(123, 144, 245);" do %>
+                  <span class="icon is-small">
+                    <em class="fa fa-shopping-cart"></em>
+                  </span>
+                  <span>Cart 
+                    <%= cart_count_over_one %>
+                  </span>
+                <% end %>
+              <% end %>
+
               <% if user_signed_in? %>
                 <%= link_to 'Sell Your Services', new_service_path, class: "navbar-item button is-dark" %>
                 <div class="navbar-item has-dropdown is-hoverable">
@@ -61,3 +72,4 @@
 
   </body>
 </html>
+
