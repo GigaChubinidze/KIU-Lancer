@@ -11,8 +11,9 @@
 <% end %>
 
 <div class="keep-shopping pv1 mt4 has-text-right">
-  <%= link_to "Keep Shopping", services_path, class: "button is-warning" %>
+  <%= link_to "Ready to Purchase", "/purchase-credentials", class: "button is-warning" %>
 </div>
+
 <hr/>
 <section class="section">
   <%= render(@cart.line_items) %>

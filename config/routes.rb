@@ -6,4 +6,6 @@ Rails.application.routes.draw do
     registrations: "registrations"
   }
   root "services#index"
+  get 'purchase-credentials' => "purchase#index"
+
 end

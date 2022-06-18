@@ -1,0 +1,41 @@
+    <nav class="navbar" role="navigation" aria-label="main navigation" style="background: rgb(123, 144, 245);">
+      <div class="navbar-brand">
+        <%= link_to root_path, class:"navbar-item" do %>
+          <img width=30 class="c-icon ms-3 mt-2" src="https://cdn-icons.flaticon.com/png/512/6096/premium/6096534.png?token=exp=1655482251~hmac=4179b9bc5f396581657fb79faada6151">  
+          <h1 class="title is-5" style="margin-left:10px;">KIU Lancer</h1>
+        <% end  %>
+    </div>
+
+      <div id="navbar" class="navbar-menu">
+        <div class="navbar-end">
+          <div class="navbar-item">
+            <div class="field is-grouped">
+              <% if cart_has_items %>
+              <%= link_to cart_path(@cart), class:"navbar-item button is-warning", style:"background: rgb(123, 144, 245);" do %>
+                  <span class="icon is-small">
+                    <em class="fa fa-shopping-cart"></em>
+                  </span>
+                  <span>Cart 
+                    <%= cart_count_over_one %>
+                  </span>
+                <% end %>
+              <% end %>
+
+              <% if user_signed_in? %>
+                <%= link_to 'Sell Your Services', new_service_path, class: "navbar-item button is-dark" %>
+                <div class="navbar-item has-dropdown is-hoverable">
+                  <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+                  <div class="navbar-dropdown is-right">
+                    <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
+                    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                  </div>
+                </div>
+              <% else %>
+                <%= link_to "Sign In", new_user_session_path, class:"navbar-item button is-primary" %>
+                <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button is-primary"%>
+              <% end %>
+            </div>
+          </div>
+        </div>
+    </div>
+  </nav>
