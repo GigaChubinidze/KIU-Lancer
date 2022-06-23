@@ -9,7 +9,9 @@ gem "carrierwave"
 gem "mini_magick"
 gem "shrine"
 gem "image_processing"
-
+gem "omniauth-facebook"
+gem "omniauth-rails_csrf_protection", "~> 1.0"
+gem "rails-i18n"
 ruby "3.1.2"
 
 # Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"

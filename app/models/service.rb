@@ -5,7 +5,7 @@ class Service < ApplicationRecord
     has_many :line_items
     validates :category, :description, :condition, :title, :price, presence: true
 
-    CATEGORY = %w{Construction Cleaning Education Pleasure Health Fitness}
+    CATEGORY = %w{Construction Cleaning Education Pleasure Health Fitness Cooking Other}
     CONDITION = %w{Contract No-Contract}
 
     private 

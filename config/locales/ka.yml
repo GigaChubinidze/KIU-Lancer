@@ -1,0 +1,58 @@
+ka:
+  sign_in: შესვლა
+  sign_up: რეგისტრაცია
+  browsing: დაათვალიერეთ უახლესი სერვისები KIU Lancer-ზე
+  offered_by: გთავაზობს
+  email: ელ-ფოსტა
+  password: პაროლი
+  remember_me: დამიმახსოვრე
+  forgot_your_password: პაროლი დაგავიწყდა?
+  name: სახელი
+  password_confirmation: გაიმეორეთ პაროლი
+  characters_minimum: სიმბოლო მინიმუმ
+  reset_instructions: გამომიგზავნე პაროლის აღდგენის ინსტრუქციები
+  offer_a_service: მომსახურების შეთავაზება
+  title: სათაური
+  description: აღწერა
+  price: ღირებულება
+  category: კატეგორია
+  condition: პირობა
+  add_images: დაამატეთ ფოტოები
+  select_category: აირჩიეთ კატეგორია
+  select_condition: აირჩიეთ პირობა
+  choose_file: აირჩიეთ ფაილი...
+  service: მომსახურება
+  cancel: გაუქმება
+  account: ანგარიში
+  create_service: შექმენით მომსახურება
+  categories: [მშენებლობა, დასუფთავება, განათლება, სიამოვნება, ჯანმრთელობა, ფიტნესი, კულინარია, სხვა]
+  conditions: [კონტრაქტი, უკონტრაქტო]
+  sell_your_services: მომსახურების შეთავაზება
+  log_out: გამოსვლა
+  cart: კალათა
+  further_details: დამატებითი დეტალები
+  add_to_cart: კალათაში დამატება
+  edit: რედაქტირება
+  your_cart: თქვენი კალათა
+  ready_to_purchase: მზად ვარ შევიძინო
+  remove_from_cart: კალათიდან ამოშლა
+  destroy_cart: კალათის განადგურება
+  total: სულ
+  are_you_sure: დარწმუნებული ხარ?
+  edit_user: ანგარიშის რედაქტირება
+  password_edit_hint: დატოვეთ ცარიელი, თუ არ გსურთ მისი შეცვლა
+  current_password: მიმდინარე პაროლი
+  current_password_hint: ჩვენ გვჭირდება თქვენი მიმდინარე პაროლი ცვლილებების დასადასტურებლად
+  update: განახლება
+  card_details: ბარათის დეტალები
+  card_type: ბარათის ტიპი
+  name_on_card: სახელი ბარათზე
+  card_number: ბარათის ნომერი
+  date: ვადა
+  cvv: ცვვ
+  subtotal: საშუალო
+  shipping: გადაზიდვა
+  total: ჯამი(გადასახადების ჩათვლით)
+  checkout: შეძენა
+  purchasing_services: სერვისების შესყიდვა...
+

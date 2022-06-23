@@ -1,33 +1,57 @@
-# Files in the config/locales directory are used for internationalization
-# and are automatically loaded by Rails. If you want to use locales other
-# than English, add the necessary files in this directory.
-#
-# To use the locales, use `I18n.t`:
-#
-#     I18n.t "hello"
-#
-# In views, this is aliased to just `t`:
-#
-#     <%= t("hello") %>
-#
-# To use a different locale, set it with `I18n.locale`:
-#
-#     I18n.locale = :es
-#
-# This would use the information in config/locales/es.yml.
-#
-# The following keys must be escaped otherwise they will not be retrieved by
-# the default I18n backend:
-#
-# true, false, on, off, yes, no
-#
-# Instead, surround them with single quotes.
-#
-# en:
-#   "true": "foo"
-#
-# To learn more, please read the Rails Internationalization guide
-# available at https://guides.rubyonrails.org/i18n.html.
-
 en:
-  hello: "Hello world"
+  sign_in: Sign In
+  sign_up: Sign Up
+  browsing: Browse the latest services on KIU Lancer
+  offered_by: Offered by
+  email: Email
+  password: Password
+  remember_me: Remember me
+  forgot_your_password: Forgot your password?
+  name: Name
+  password_confirmation: Repeat Password
+  characters_minimum: characters minimum
+  reset_instructions: Send me reset password instructions
+  offer_a_service: Offer a Service
+  title: Title
+  description: Description
+  price: Price
+  category: Category
+  condition: Condition
+  add_images: Add Images
+  select_category: Select Category
+  select_condition: Select Condition
+  choose_file: Choose a File...
+  service: Service
+  cancel: Cancel
+  account: Account
+  create_service: Create Service
+  categories: [Construction, Cleaning, Education, Pleasure, Health, Fitness, Cooking, Other]
+  conditions: [Contract, No-Contract]
+  sell_your_services: Sell Your Services
+  log_out: Log Out
+  cart: Cart
+  further_details: Further Details
+  add_to_cart: Add to Cart
+  edit: Edit
+  your_cart: Your Cart
+  ready_to_purchase: Ready to Purchase
+  remove_from_cart: Remove From Cart
+  destroy_cart: Destroy Cart
+  total: Total
+  are_you_sure: Are you sure?
+  edit_user: Edit User
+  password_edit_hint: leave it blank if you don't want to change it
+  current_password: Current password
+  current_password_hint: we need your current password to confirm your changes
+  update: Update
+  card_details: Card Details
+  card_type: Card Type
+  name_on_card: Name on Card
+  card_number: Card Number
+  date: Date
+  cvv: CVV
+  subtotal: Subtotal
+  shipping: Shipping
+  total: Total(Incl. taxes)
+  checkout: Checkout
+  purchasing_services: Purchasing Services...

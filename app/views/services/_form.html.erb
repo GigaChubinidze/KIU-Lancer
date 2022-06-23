@@ -8,13 +8,13 @@
 
           <div class="field column is-9">
             <div class="control">
-              <%= f.input :title , required: false, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
+              <%= f.input :title, :label => t(:title), required: false, input_html: { class: "input"}, wrapper: false, label_html: { class:"label" } %>
             </div>
           </div>
 
           <div class="field column">
             <div class="control">
-              <%= f.input :price, required: false, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
+              <%= f.input :price, :label => t(:price), required: false, input_html: { class:"input", maxlength: 7  }, wrapper: false, label_html: { class:"label" } %>
             </div>
           </div>
 
@@ -23,17 +23,17 @@
 
         <div class="field">
           <div class="control">
-            <%= f.input :description, required: false, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
+            <%= f.input :description, :label => t(:description), required: false, input_html: { class:"textarea" }, wrapper: false, label_html: { class:"label" } %>
           </div>
         </div>
 
         <div class="columns">
           <div class="field column is-4">
             <div class="control">
-              <label class="label">Category</label>
+              <label class="label"><%= t(:category) %></label>
               <div class="control has-icons-left">
                 <span class="select">
-                  <%= f.input_field :category, collection: Service::CATEGORY, prompt: "Select category" %>
+                  <%= f.input_field :category, collection: t(:categories), prompt: t(:select_category) %>
                 </span>
                 <span class="icon is-small is-left">
                   <i class="fa fa-tag"></i>
@@ -44,10 +44,10 @@
 
           <div class="field column is-4">
             <div class="control">
-              <label class="label">Condition</label>
+              <label class="label"><%= t(:condition) %></label>
               <div class="control has-icons-left">
                 <span class="select">
-                  <%= f.input_field :condition, collection: Service::CONDITION, prompt: "Select condition" %>
+                  <%= f.input_field :condition, collection: t(:conditions), prompt: t(:select_condition) %>
                 </span>
                 <span class="icon is-small is-left">
                   <i class="fa fa-handshake-o"></i>
@@ -59,13 +59,13 @@
 
         <div class="field">
           <div class="control">
-            <label class="label">Add images</label>
+            <label class="label"><%= t(:add_images) %></label>
               <div class="file">
               <label class="file-label">
                 <%= f.input :image, as: :file, input_html: { class:"file-input service-image" }, label: false, wrapper: false %>
                   <span class="file-cta">
                     <span class="file-icon"><i class="fa fa-upload"></i></span>
-                    <span class="file-label">Choose a file…</span>
+                    <span class="file-label"><%= t(:choose_file) %></span>
                   </span>
               </label>
               </div>
@@ -77,8 +77,8 @@
 
         <div class="field is-grouped">
           <div class="control">
-            <%= f.button :submit, class: 'button is-warning' %>
-            <%= link_to 'Cancel', services_path, class:'button is-light' %>
+            <%= f.button :submit, t(:create_service),  class: 'button is-warning' %>
+            <%= link_to t(:cancel), services_path, class:'button is-light' %>
           </div>
         </div>
 

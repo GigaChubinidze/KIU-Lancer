@@ -1,17 +1,15 @@
 <% content_for :header do %>
-<section class="ServiceHeader" style="background: rgb(9, 115, 223);">
-  <div class="hero-body">
+<section class="hero is-warning" style="background: rgb(9, 115, 223); height:45px;">
     <div class="container">
-      <h1 class="title">
-        Your Cart
-      </h1>
+      <h5 class="title">
+        <%= t(:your_cart) %>
+      </h5>
     </div>
-  </div>
 </section>
 <% end %>
 
 <div class="keep-shopping pv1 mt4 has-text-right">
-  <%= link_to "Ready to Purchase", "/purchase-credentials", class: "button is-warning" %>
+  <%= link_to t(:ready_to_purchase), "/purchase-credentials", class: "button is-warning" %>
 </div>
 
 <hr/>
@@ -20,12 +18,12 @@
   
   <div class="columns">
     <div class="column">
-      <%= button_to "Destroy Cart", @cart, method: :delete, data: { confirm: "Are you sure?"}, class: "button is-danger" %>
+      <%= button_to t(:destroy_cart), @cart, method: :delete, data: { confirm: t(:are_you_sure)}, class: "button is-danger" %>
     </div>
 
     <div class="column total has-text-right">
       <h4 class="title is-4">
-        <span class="f5 has-text-gray">Total:</span>
+        <span class="f5 has-text-gray"><%= t(:total) %>:</span>
         <%= number_to_currency(@cart.total_price) %>
       </h4>
     </div>

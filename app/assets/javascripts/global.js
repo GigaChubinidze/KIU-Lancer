@@ -7,7 +7,7 @@ document.addEventListener("turbolinks:load", function()
       {
         notification.style.display = "none";
       }, 
-      1000);
+      0);
     }
   
 });

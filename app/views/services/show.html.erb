@@ -12,22 +12,22 @@
 
       <div class="content pa4 mt3 bg-white border-radius-3">
 
-      <h3 class="subtitle is-4">Description</h3>
+      <h3 class="subtitle is-4"><%= t(:description) %></h3>
       <%= @service.description %>
 
 
-      <h3 class="subtitle is-4 pt5">Further Details</h3>
+      <h3 class="subtitle is-4 pt5"><%= t(:further_details)%></h3>
 
       <table class="table is-narrow">
         <% if @service.condition %>
         <tr>
-          <td class="has-text-weight-bold">Condition:</td>
+          <td class="has-text-weight-bold"><%= t(:condition) %>:</td>
           <td><%= @service.condition %></td>
         </tr>
         <% end %>
         <% if @service.category %>
           <tr>
-            <td class="has-text-weight-bold">Category:</td>
+            <td class="has-text-weight-bold"><%= t(:category) %>:</td>
             <td><%= @service.category %></td>
           </tr>
         <% end %>
@@ -38,14 +38,17 @@
     <div class="column is-3 is-offset-1">
       <div class="bg-white pa4 border-radius-3">
         <h4 class="title is-5 has-text-centered"><%= number_to_currency(@service.price) %></h4>
-        <p class="has-text-centered mb4">Offered by <%= @service.user.name %></p>
-        <%= button_to 'Add to cart', line_items_path(service_id: @service.id), class: 'button is-warning add-to-cart' %>
+        <p class="has-text-centered mb4"><%= t(:offered_by) %> <%= @service.user.name %></p>
+        
+        <% unless service_author(@service) %>
+          <%= button_to t(:add_to_cart), line_items_path(service_id: @service.id), class: 'button is-warning add-to-cart' %>
+        <% end %>
       </div>
     </div>
   </div>
 
   <% if service_author(@service) %>
-    <%= link_to 'Edit', edit_service_path(@service), class: 'button' %>
+    <%= link_to t(:edit), edit_service_path(@service), class: 'button' %>
   <% end %>
 </section>
 

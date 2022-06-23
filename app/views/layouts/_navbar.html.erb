@@ -15,24 +15,23 @@
                   <span class="icon is-small">
                     <em class="fa fa-shopping-cart"></em>
                   </span>
-                  <span>Cart 
+                  <span> <%= t(:cart) %> 
                     <%= cart_count_over_one %>
                   </span>
                 <% end %>
               <% end %>
 
               <% if user_signed_in? %>
-                <%= link_to 'Sell Your Services', new_service_path, class: "navbar-item button is-dark" %>
+                <%= link_to t(:sell_your_services), new_service_path, class: "navbar-item button is-dark" %>
                 <div class="navbar-item has-dropdown is-hoverable">
-                  <%= link_to 'Account', edit_user_registration_path, class: "navbar-link" %>
+                  <%= link_to current_user.name, edit_user_registration_path, class: "navbar-link" %>
                   <div class="navbar-dropdown is-right">
-                    <%= link_to current_user.name, edit_user_registration_path, class:"navbar-item" %>
-                    <%= button_to "Log Out", destroy_user_session_path, method: :delete, class:"navbar-item" %>
+                    <%= button_to t(:log_out), destroy_user_session_path, method: :delete, class:"navbar-item" %>
                   </div>
                 </div>
               <% else %>
-                <%= link_to "Sign In", new_user_session_path, class:"navbar-item button is-primary" %>
-                <%= link_to "Sign up", new_user_registration_path, class:"navbar-item button is-primary"%>
+                <%= link_to t(:sign_in), new_user_session_path, class:"navbar-item button is-primary", style:"color:blue; margin-right: 5px;" %>
+                <%= link_to t(:sign_up), new_user_registration_path, class:"navbar-item button is-primary", style:"color:blue"%>
               <% end %>
             </div>
           </div>

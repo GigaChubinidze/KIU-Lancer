@@ -2,7 +2,7 @@
 <section class="hero is-warning" style="background: rgb(9, 115, 223);">
     <div class="container">
       <h5 class="title">
-        Purchasing Services...
+        <%= t(:purchasing_services) %>
       </h5>
     </div>
 </section>
@@ -13,60 +13,63 @@
     <div class="col-md-4">
         <div class="payment-info">
             <div class="d-flex justify-content-between align-items-center">
-                <span>Card details</span>
+                <span>Card Details</span>
             </div>
-            <span class="type d-block mt-3 mb-1">Card type</span>
+            <span class="type d-block mt-3 mb-1"></span>
             
             <label class="radio">
                 <input type="radio" name="card" value="payment" checked> 
-                <span><img width="30" src="https://img.icons8.com/color/48/000000/mastercard.png"/></span> 
+                <span><img width="50" src="https://img.icons8.com/color/48/000000/mastercard.png"/></span> 
             </label>
             <label class="radio"> 
                 <input type="radio" name="card" value="payment"> 
-                <span><img width="30" src="https://img.icons8.com/officel/48/000000/visa.png"/></span> 
+                <span><img width="50" src="https://img.icons8.com/officel/48/000000/visa.png"/></span> 
             </label>
             <label class="radio"> 
                 <input type="radio" name="card" value="payment"> 
-                <span><img width="30" src="https://img.icons8.com/ultraviolet/48/000000/amex.png"/></span> 
+                <span><img width="50" src="https://img.icons8.com/ultraviolet/48/000000/amex.png"/></span> 
             </label>
             <label class="radio"> 
                 <input type="radio" name="card" value="payment"> 
-                <span><img width="30" src="https://img.icons8.com/officel/48/000000/paypal.png"/></span> 
+                <span><img width="50" src="https://img.icons8.com/officel/48/000000/paypal.png"/></span> 
             </label>
             <div>
-                <label class="credit-card-label">Name on card</label>
+                <label class="credit-card-label">Name On Card</label>
+                <br>
                 <input type="text" class="form-control credit-inputs" placeholder="Name">
             </div>
             <div>
-                <label class="credit-card-label">Card number</label>
+                <label class="credit-card-label">Card Number</label>
+                <br>
                 <input type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000">
             </div>
 
             <div class="row">
                 <div class="col-md-6">
-                    <label class="credit-card-label">Date</label>
+                    <label class="credit-card-label">Expiry Date</label>
+                    <br>
                     <input type="text" class="form-control credit-inputs" placeholder="12/24">
                 </div>
                 <div class="col-md-6">
                     <label class="credit-card-label">CVV</label>
+                    <br>
                     <input type="text" class="form-control credit-inputs" placeholder="342">
                 </div>
             </div>
             <hr class="line">
                 <div class="d-flex justify-content-between information">
-                    <span>Subtotal</span>
+                    <span>Subtotal:</span>
                     <span><%= number_to_currency(@cart.total_price) %></span>
                 </div>
                 <div class="d-flex justify-content-between information">
-                    <span>Shipping</span>
+                    <span>Shipping:</span>
                     <span>$20.00</span>
                 </div>
                 <div class="d-flex justify-content-between information">
-                    <span>Total(Incl. taxes)</span>
+                    <span>Total(Incl. taxes):</span>
                     <span><%= number_to_currency(@cart.total_price + 20) %></span>
                 </div>
                 <button class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button">
-                    <span><%= number_to_currency(@cart.total_price + 20) %></span>
                     <span>Checkout<em class="fa fa-long-arrow-right ml-1"></em></span>
                 </button>
             </div>
@@ -75,17 +78,18 @@
 </div>
 
 <style>
+
   .purchaseform {
     display: flex;
     align-items: center;
     justify-content: center;
     align: center;
     flex-wrap: wrap;
-    
   }
+
   .payment-info {
-    background: blue;
-    padding: 10px;
+    background: #1b3d6e;
+    padding: 14px;
     border-radius: 6px;
     color: #fff;
     font-weight: bold;
@@ -107,6 +111,7 @@
     font-size: 12px;
   }
   
+  
   .table-shadow {
     -webkit-box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
     box-shadow: 5px 5px 15px -2px rgba(0,0,0,0.42);
@@ -118,6 +123,7 @@
   }
   
   label.radio {
+    padding: 2px;
     cursor: pointer;
   }
   
@@ -130,19 +136,15 @@
   }
   
   label.radio span {
-    padding: 1px 12px;
-    border: 2px solid #ada9a9;
+    padding: 2px 12px;
+    border: 1px solid #ffffff8a;
     display: inline-block;
-    color: #8f37aa;
-    border-radius: 3px;
-    text-transform: uppercase;
-    font-size: 11px;
-    font-weight: 300;
+    border-radius: 1px;
   }
   
   label.radio input:checked + span {
     border-color: #fff;
-    background-color: blue;
+    background-color: rgb(18, 18, 47);
     color: #fff;
   }
   
@@ -153,13 +155,18 @@
   }
   
   .credit-inputs::placeholder {
-    color: #fff;
-    font-size: 13px;
+    color: rgba(197, 176, 176, 0.734);
+    font-size: 16px;
   }
   
   .credit-card-label {
-    font-size: 9px;
-    font-weight: 300;
+    font-size: 16px;
+    font-weight: 400;
+  }
+
+
+  .form-control.credit-inputs {
+    width: 330px;
   }
   
   .form-control.credit-inputs:focus {
@@ -168,8 +175,9 @@
   }
   
   .line {
-    border-bottom: 1px solid rgb(102,102,221);
+    border-bottom: 2px solid #0c151c;
   }
+  
   
   .information span {
     font-size: 12px;
@@ -185,7 +193,27 @@
     box-shadow: 5px 5px 4px -1px rgba(0, 0, 0, 0.08);
   }
   
+
   .spec {
     font-size: 11px;
   }
+
+  .d-flex.justify-content-between.align-items-center {
+    font-size: 30px;
+  }
+
+  /* button {
+    transition:
+      background-color 0.1s linear,
+      border-color 0.1s linear,
+      color 0.1s linear,
+      box-shadow 0.1s linear,
+      transform 0.1s ease;
+    transition:
+      background-color var(--animation-duration) linear,
+      border-color var(--animation-duration) linear,
+      color var(--animation-duration) linear,
+      box-shadow var(--animation-duration) linear,
+      transform var(--animation-duration) ease;
+  } */
 </style>
