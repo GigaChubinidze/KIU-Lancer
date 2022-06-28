@@ -27,8 +27,12 @@
         <% end %>
         <% if @service.category %>
           <tr>
-            <td class="has-text-weight-bold"><%= t(:category) %>:</td>
-            <td><%= @service.category %></td>
+            <td class="has-text-weight-bold">
+              <%= t(:category) %>:
+            </td>
+            <td>
+              <%= @service.category %>
+            </td>
           </tr>
         <% end %>
         
