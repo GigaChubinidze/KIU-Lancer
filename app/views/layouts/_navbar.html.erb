@@ -1,10 +1,10 @@
     <nav class="navbar" role="navigation" aria-label="main navigation" style="background: rgb(123, 144, 245);">
-      <div class="navbar-brand">
-        <%= link_to root_path, class:"navbar-item" do %>
-          <img width=30 class="c-icon ms-3 mt-2" src="https://cdn-icons.flaticon.com/png/512/6096/premium/6096534.png?token=exp=1655482251~hmac=4179b9bc5f396581657fb79faada6151">  
+      <div class="navbar-brand" id="homeicon">
+        <%= link_to root_path, class:"navbar-item", style:"" do %>
+          <%= image_tag("rainbow-flag.png") %>
           <h1 class="title is-5" style="margin-left:10px;">KIU Lancer</h1>
         <% end  %>
-    </div>
+      </div>
 
       <div id="navbar" class="navbar-menu">
         <div class="navbar-end">
@@ -22,19 +22,33 @@
               <% end %>
 
               <% if user_signed_in? %>
-                <%= link_to t(:sell_your_services), new_service_path, class: "navbar-item button is-dark" %>
-                <div class="navbar-item has-dropdown is-hoverable">
-                  <%= link_to current_user.name, edit_user_registration_path, class: "navbar-link" %>
-                  <div class="navbar-dropdown is-right">
-                    <%= button_to t(:log_out), destroy_user_session_path, method: :delete, class:"navbar-item" %>
-                  </div>
+                
+                <div class="navbar-item" id="sellservices" style="margin-right: 5px;">
+                  <%= link_to t(:sell_your_services), new_service_path, class: "nav-item button is-dark"%>
                 </div>
-              <% else %>
-                <%= link_to t(:sign_in), new_user_session_path, class:"navbar-item button is-primary", style:"color:blue; margin-right: 5px;" %>
-                <%= link_to t(:sign_up), new_user_registration_path, class:"navbar-item button is-primary", style:"color:blue"%>
+                <div class="navbar-item" id="youracc"  style="margin-right: 5px;">
+                  <%= link_to t(:your_account), edit_user_registration_path, class: "nav-item", style:"color:white;" %>
+                </div>
+                <div class="navbar-item" id="logout">
+                  <%= link_to t(:log_out), destroy_user_session_path, method: :delete, class:"nav-item", style:"color:white;" %>
+                </div>
               <% end %>
             </div>
           </div>
         </div>
     </div>
   </nav>
+
+  <style>
+  #homeicon:hover {
+		background-color: rgb(92, 117, 243);
+	}
+  
+  #youracc:hover {
+    		background-color: rgb(92, 117, 243);
+  }
+  #logout:hover {
+    		background-color: rgb(92, 117, 243);
+  }
+
+  </style>

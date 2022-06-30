@@ -12,19 +12,23 @@
       <div class="navbar-front">
       </div>
       <div class="navbar-end">
-        <div class="navbar-item">
+        <div class="navbar-item" id="<%='redflag' if I18n.locale == :ka %>">
           <%= link_to(locale: :ka) do %>
-            <img width=30 class="c-icon ms-3 mt-2" src="https://cdn.countryflags.com/thumbs/georgia/flag-400.png">  
+            <img  width=30 class="c-icon ms-3 mt-2"  alt="geoflag" src="https://cdn.countryflags.com/thumbs/georgia/flag-400.png">  
           <% end  %>
         </div>
         </div>
-        <div class="navbar-item">
+        <div class="navbar-item" id="<%='redflag' if I18n.locale == :en %>" >
           <%= link_to(locale: :en) do %>
-            <img width=30 class="c-icon ms-3 mt-2" src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png">  
+            <img  width=30 class="c-icon ms-3 mt-2" alt="enflag" src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-400.png">  
           <% end  %>
         </div>
+        
       </div>
   </div>
 </nav>
 
+
 <i class="bi bi-telephone-inbound-fill"></i>
+
+

@@ -6,7 +6,7 @@ Rails.application.routes.draw do
     devise_for :users, controllers: {
       registrations: "registrations"
     }
-    root "services#index"
+    root "store#index"
     get 'purchase-credentials' => "purchase#index"
   end
 end

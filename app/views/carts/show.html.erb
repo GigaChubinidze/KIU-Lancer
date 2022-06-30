@@ -1,5 +1,5 @@
 <% content_for :header do %>
-<section class="hero is-warning" style="background: rgb(9, 115, 223); height:45px;">
+<section class="hero is-warning" style="background: white; height:45px;">
     <div class="container">
       <h5 class="title">
         <%= t(:your_cart) %>
@@ -9,7 +9,7 @@
 <% end %>
 
 <div class="keep-shopping pv1 mt4 has-text-right">
-  <%= link_to t(:ready_to_purchase), "/purchase-credentials", class: "button is-warning" %>
+  <%= link_to t(:ready_to_purchase), purchase_credentials_path, class: "button is-warning" %>
 </div>
 
 <hr/>

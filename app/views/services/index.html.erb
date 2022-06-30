@@ -1,5 +1,5 @@
 <% content_for :header do %>
-<section class="hero is-warning" style="background: rgb(9, 115, 223); height:45px;">
+<section class="hero is-warning" style="background: white; height:45px;">
     <div class="container">
       <h5 class="title">
         <%= t(:browsing) %>
@@ -22,7 +22,13 @@
         <h3 class="fw7 f4 title"><%= link_to service.title, service %></h3>
         <%= link_to image_tag(service.image_url, style:"width:200px; height:auto;"), service if service.image %>
         <p class="has-text-gray fg pt1"> <%= t("offered_by") %> <%= service.user.name %></p><br>
-        <p class="f3 fw6 has-text-right pt2 price"><%= number_to_currency(service.price) %></p>
+        <p class="f3 fw6 has-text-right pt2 price">
+        <% if I18n.locale == :ka %>
+          <%= service.price * 2.94 %>
+        <% elsif I18n.locale == :en  %>
+          <%= service.price %>
+        <% end %>
+        </p>
 
         <% if service_author(service) %>
           <%= link_to "Edit", edit_service_path(service), class: "button is-small" %>

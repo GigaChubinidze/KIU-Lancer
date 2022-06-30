@@ -7,7 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= stylesheet_link_tag 'https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' %>
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= favicon_link_tag asset_path('circlelogo.png') %>
     <%= javascript_include_tag 'application' %>
+    <style> #redflag { rgb(113, 95, 198); background-color:rgb(113, 95, 198);}</style>
   </head>
 
   <body class="<%= yield (:body_class) %>">
@@ -26,6 +28,7 @@
   <%= render "layouts/navbar" %>
 
   <%= yield(:header) %>
+ <%= render "layouts/footer" %>
 
   <div class="container">
     <%= yield %>
@@ -33,5 +36,4 @@
   </body>
   
 </html>
-  <%= render "layouts/footer" %>
-
+ 

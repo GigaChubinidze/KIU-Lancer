@@ -41,8 +41,8 @@
     </div>
     <div class="column is-3 is-offset-1">
       <div class="bg-white pa4 border-radius-3">
-        <h4 class="title is-5 has-text-centered"><%= number_to_currency(@service.price) %></h4>
-        <p class="has-text-centered mb4"><%= t(:offered_by) %> <%= @service.user.name %></p>
+        <h4 class="title is-5 has-text-centered"><%= number_to_currency(I18n.locale == :ka ? @service.price * 2.94 : @service.price) %></h4>
+        <p class="has-text-centered mb4"><%= t(:offered_by) %> <%= current_user.name %></p>
         
         <% unless service_author(@service) %>
           <%= button_to t(:add_to_cart), line_items_path(service_id: @service.id), class: 'button is-warning add-to-cart' %>
@@ -54,5 +54,6 @@
   <% if service_author(@service) %>
     <%= link_to t(:edit), edit_service_path(@service), class: 'button' %>
   <% end %>
+  <br><br><br>
 </section>
 
