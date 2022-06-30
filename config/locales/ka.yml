@@ -44,16 +44,7 @@ ka:
   current_password: მიმდინარე პაროლი
   current_password_hint: ჩვენ გვჭირდება თქვენი მიმდინარე პაროლი ცვლილებების დასადასტურებლად
   update: განახლება
-  card_details: ბარათის დეტალები
-  card_type: ბარათის ტიპი
-  name_on_card: სახელი ბარათზე
-  card_number: ბარათის ნომერი
-  date: ვადა
-  cvv: ცვვ
-  subtotal: საშუალო
-  shipping: გადაზიდვა
-  total: ჯამი(გადასახადების ჩათვლით)
-  checkout: შეძენა
+  total: ჯამი
   purchasing_services: სერვისების შესყიდვა...
   მშენებლობა: მშენებლობა
   დასუფთავება: დასუფთავება 
@@ -66,3 +57,13 @@ ka:
   subheading_message: KIU - ს სტუდენტების მიერ შექმნილი ფრილანსინგის პლატფორმა
   editing_service: მომსახურების რედაქტირება
   your_account: თქვენი ანგარიში
+  contact_us: დაგვიკავშირდით
+  card_details: ბარათის დეტალები
+  name_on_card: ბარათის სახელი
+  card_number: ბარათის რიცხვი
+  expiry_date: ვადის გასვლა
+  cvv: ცვვ
+  subtotal: ჯამში
+  taxes: ზედმეტი გადასახადი
+  total_incl_taxes: სულ(ზედმეტი გადასახადის ჩათვლით)
+  checkout: შესყიდვა

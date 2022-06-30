@@ -23,8 +23,12 @@
 
     <div class="column total has-text-right">
       <h4 class="title is-4">
-        <span class="f5 has-text-gray"><%= t(:total) %>:</span>
-        <%= number_to_currency(@cart.total_price) %>
+      <span class="f3 has-text-gray"><%= t(:total) %>:</span>
+        <% if I18n.locale == :ka %>
+          <%= number_to_currency(@cart.total_price * 2.94 ) %>
+        <% elsif I18n.locale == :en  %>
+          <%= number_to_currency(@cart.total_price) %>
+        <% end %>
       </h4>
     </div>
   </div>

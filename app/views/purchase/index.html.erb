@@ -13,7 +13,7 @@
     <div class="col-md-4"> 
         <div class="payment-info">
             <div class="d-flex justify-content-between align-items-center">
-                <span>Card Details</span>
+                <span><%= t(:card_details)%></span>
             </div>
             <span class="type d-block mt-3 mb-1"></span>
             
@@ -34,43 +34,61 @@
                 <span><img width="50" src="https://img.icons8.com/officel/48/000000/paypal.png"/></span> 
             </label>
             <div>
-                <label class="credit-card-label">Name On Card</label>
+                <label class="credit-card-label"><%= t(:name_on_card)%></label>
                 <br>
                 <input type="text" class="form-control credit-inputs" placeholder="Name">
             </div>
             <div>
-                <label class="credit-card-label">Card Number</label>
+                <label class="credit-card-label"><%= t(:card_number)%></label>
                 <br>
                 <input type="text" class="form-control credit-inputs" placeholder="0000 0000 0000 0000">
             </div>
 
             <div class="row">
                 <div class="col-md-6">
-                    <label class="credit-card-label">Expiry Date</label>
+                    <label class="credit-card-label"><%= t(:expiry_date)%></label>
                     <br>
                     <input type="text" class="form-control credit-inputs" placeholder="12/24">
                 </div>
                 <div class="col-md-6">
-                    <label class="credit-card-label">CVV</label>
+                    <label class="credit-card-label"><%= t(:cvv)%></label>
                     <br>
                     <input type="text" class="form-control credit-inputs" placeholder="342">
                 </div>
             </div>
             <hr class="line">
                 <div class="d-flex justify-content-between information">
-                    <span>Subtotal:</span>
-                    <span><%= number_to_currency(@cart.total_price) %></span>
+                    <span><%= t(:subtotal)%>:</span>
+                    <span>
+                      <% if I18n.locale == :ka %>
+                        <%= number_to_currency(@cart.total_price * 2.94) %>
+                      <% elsif I18n.locale == :en  %>
+                        <%= number_to_currency(@cart.total_price) %>
+                      <% end %>
+                    </span>
                 </div>
                 <div class="d-flex justify-content-between information">
-                    <span>Shipping:</span>
-                    <span>$20.00</span>
+                    <span><%= t(:taxes)%>:</span>
+                    <span>
+                      <% if I18n.locale == :ka %>
+                        <%= number_to_currency(20 * 2.94) %>
+                      <% elsif I18n.locale == :en  %>
+                        <%= number_to_currency(20) %>
+                      <% end %>
+                    </span>
                 </div>
                 <div class="d-flex justify-content-between information">
-                    <span>Total(Incl. taxes):</span>
-                    <span><%= number_to_currency(@cart.total_price + 20) %></span>
+                    <span><%= t(:total_incl_taxes)%>:</span>
+                    <span>
+                      <% if I18n.locale == :ka %>
+                        <%= number_to_currency(@cart.total_price * 2.94 + 20 * 2.94)   %>
+                      <% elsif I18n.locale == :en  %>
+                        <%= number_to_currency(@cart.total_price  + 20) %>
+                      <% end %>
+                    </span>
                 </div>
                 <button class="btn btn-primary btn-block d-flex justify-content-between mt-3" type="button">
-                    <span>Checkout<em class="fa fa-long-arrow-right ml-1"></em></span>
+                    <span><%= t(:checkout)%><em class="fa fa-long-arrow-right ml-1"></em></span>
                 </button>
             </div>
         </div>

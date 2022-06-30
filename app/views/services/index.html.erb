@@ -24,9 +24,9 @@
         <p class="has-text-gray fg pt1"> <%= t("offered_by") %> <%= service.user.name %></p><br>
         <p class="f3 fw6 has-text-right pt2 price">
         <% if I18n.locale == :ka %>
-          <%= service.price * 2.94 %>
+          <%= number_to_currency(service.price * 2.94) %>
         <% elsif I18n.locale == :en  %>
-          <%= service.price %>
+          <%= number_to_currency(service.price) %>
         <% end %>
         </p>
 

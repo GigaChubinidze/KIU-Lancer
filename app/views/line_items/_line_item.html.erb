@@ -11,7 +11,13 @@
         <%= truncate(line_item.service.description, length: 140) %>
       </div>
       <div class="column is-3 has-text-right">
-        <strong class="f4"><%= number_to_currency(line_item.total_price) %></strong>
+        <strong class="f4">
+          <% if I18n.locale == :ka %>
+            <%= number_to_currency(line_item.service.price * 2.94) %>
+          <% elsif I18n.locale == :en  %>
+            <%= number_to_currency(line_item.service.price) %>
+          <% end %>
+        </strong>
       </div>
     </div>
   </div>
